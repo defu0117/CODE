@@ -22,7 +22,7 @@ msvc_deps_prefix = 注意: 包含文件:
 
 rule C_COMPILER__main.2ec_unscanned_Debug
   deps = msvc
-  command = ${LAUNCHER}${CODE_CHECK}D:\Code_env\VisualStudio\IDE\VC\Tools\MSVC\14.39.33519\bin\Hostx64\x64\cl.exe  /nologo $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
+  command = ${LAUNCHER}${CODE_CHECK}D:\code_soft\VS\VC\Tools\MSVC\14.39.33519\bin\Hostx64\x64\cl.exe  /nologo $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
   description = Building C object $out
 
 
@@ -30,7 +30,7 @@ rule C_COMPILER__main.2ec_unscanned_Debug
 # Rule for linking C executable.
 
 rule C_EXECUTABLE_LINKER__main.2ec_Debug
-  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && D:\Code_env\VisualStudio\IDE\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E vs_link_exe --intdir=$OBJECT_DIR --rc="D:\Windows Kits\10\bin\10.0.22621.0\x64\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.22621.0\x64\mt.exe" --manifests $MANIFESTS -- D:\Code_env\VisualStudio\IDE\VC\Tools\MSVC\14.39.33519\bin\Hostx64\x64\link.exe /nologo $in  /out:$TARGET_FILE /implib:$TARGET_IMPLIB /pdb:$TARGET_PDB /version:0.0 $LINK_FLAGS $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && D:\code_soft\VS\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E vs_link_exe --intdir=$OBJECT_DIR --rc="D:\Windows Kits\10\bin\10.0.22621.0\x64\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.22621.0\x64\mt.exe" --manifests $MANIFESTS -- D:\code_soft\VS\VC\Tools\MSVC\14.39.33519\bin\Hostx64\x64\link.exe /nologo $in  /out:$TARGET_FILE /implib:$TARGET_IMPLIB /pdb:$TARGET_PDB /version:0.0 $LINK_FLAGS $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking C executable $TARGET_FILE
   restat = $RESTAT
 
@@ -47,7 +47,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = D:\Code_env\VisualStudio\IDE\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe --regenerate-during-build -SD:\Code_store\c -BD:\Code_store\c\out\build\x64-Debug
+  command = D:\code_soft\VS\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe --regenerate-during-build -SD:\code_store\c -BD:\code_store\c\out\build\x64-Debug
   description = Re-running CMake...
   generator = 1
 
@@ -56,7 +56,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = D:\CODE_ENV\VISUALSTUDIO\IDE\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\CMAKE\Ninja\ninja.exe $FILE_ARG -t clean $TARGETS
+  command = D:\CODE_SOFT\VS\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\CMAKE\Ninja\ninja.exe $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -64,6 +64,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = D:\CODE_ENV\VISUALSTUDIO\IDE\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\CMAKE\Ninja\ninja.exe -t targets
+  command = D:\CODE_SOFT\VS\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\CMAKE\Ninja\ninja.exe -t targets
   description = All primary targets available:
 
